@@ -1,7 +1,7 @@
 ## Contains functions to create a "super-matrix" object and cache its inverse.
 ## Assumes the matrix supplied is invertible.
 
-## Function to create a special matrix that returns a list of functions to:
+## Create a special matrix that returns a list of functions to:
 ## get matrix
 ## get the inverse of the matrix
 ## set matrix values
@@ -32,8 +32,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Function to determine whether a new inverse needs to be calculated for
-## a "special" matrix.
+## Function to calculate a new inverse for a special matrix, if needed,
+## or fetch the cached inverse
 
 cacheSolve <- function(x, ...) {
   
