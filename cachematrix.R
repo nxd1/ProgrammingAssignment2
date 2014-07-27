@@ -10,21 +10,20 @@ makeCacheMatrix <- function(x = matrix()) {
 
   xinv <- NULL
   
-  # methods to get matrix, get inverse and get original
+  # methods to get matrix, get inverse
   get <- function() x
   getinv <- function() xinv
   
-  # method to re/set new values for x after initial creation and cache it,
-  # resetting the previously cached inverse
+  # method to set new values for x; also resets previously cached inverse
   set <- function(y) {
     x <<- y
     xinv <<- NULL
   }
   
-  # method to set a new inverse provided
+  # method to set a newly provided inverse 
   setinv <- function(new.inv) xinv <<- new.inv
   
-  # return list of setters/getters
+  # return list of functions to get/set values
   list(get = get,
       getinv = getinv,
       set = set,
